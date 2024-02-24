@@ -21,6 +21,6 @@ public class Movie
     public int? Edited { get; set; }
     public string? Lent { get; set; }
     [Required]
-    public int CopiedToFlex { get; set; }
+    public int CopiedToPlex { get; set; }
     public string? Notes { get; set; }
 }

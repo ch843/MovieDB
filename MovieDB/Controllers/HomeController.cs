@@ -70,8 +70,8 @@ public class HomeController : Controller
 
     public IActionResult Delete(int id)
     {
-        var record = _context.Categories
-            .Single(x => x.CategoryId == id);
+        var record = _context.Movies
+            .Single(x => x.MovieId == id);
         return View(record);
     }
 
