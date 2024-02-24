@@ -37,7 +37,7 @@ public class HomeController : Controller
         _context.Movies.Add(movie);
         _context.SaveChanges();
 
-        return View("Index");
+        return View("Collection");
     }
     public IActionResult Collection()
     {
