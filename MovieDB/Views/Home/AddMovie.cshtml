@@ -5,22 +5,12 @@
 <h2 class="display-4 text-center">Add Movie to Collection</h2>
 <br />
 <form method="post">
+    <input type="hidden" asp-for="MovieId"/>
+    
     <div class="form-group">
         <label asp-for="Title">Enter Move Title:</label><br />
         <input asp-for="Title" required/>
     </div><br />
-    @* <div class="form-group"> *@
-    @*     <select asp-for="Category" required> *@
-    @*         <option value="" disabled selected>Choose a category</option> *@
-    @*         <option value="Drama">Drama</option> *@
-    @*         <option value="Television">Television</option> *@
-    @*         <option value="Horror/Suspense">Horror/Suspense</option> *@
-    @*         <option value="Comedy">Comedy</option> *@
-    @*         <option value="Family">Family</option> *@
-    @*         <option value="Action/Adventure">Action/Adventure</option> *@
-    @*         <option value="Miscellaneous">Miscellaneous</option> *@
-    @*     </select> *@
-    @* </div><br /> *@
     <select asp-for="CategoryId" class="form-control" style="max-width: 10em">
             <option value="">Select a Category</option>
             @foreach (Category c in ViewBag.Categories)
@@ -30,15 +20,15 @@
         </select>
     <div class="form-group">
         <label asp-for="Year">Year Produced:</label><br />
-        <input asp-for="Year" type="number" min="1988" step="1" placeholder="2024" 
-               title="Enter move year. Must be after 1988" required/>
+        <input asp-for="Year" type="number" min="1888" step="1" placeholder="2024" 
+               title="Enter move year. Must be after 1888." required/>
     </div><br />
     <div class="form-group">
         <label asp-for="Director">Enter Director's Name:</label><br />
         <input asp-for="Director" required/>
     </div><br />
     <div class="form-group">
-        <select asp-for="Rating" required>
+        <select asp-for="Rating">
             <option value="" disabled selected>Choose a rating</option>
             <option value="G">G</option>
             <option value="PG">PG</option>
@@ -52,14 +42,14 @@
     </div><br />
     <div class="form-group">
         <label>Has this movie record been edited?</label><br />
-        <input type="radio" asp-for="Edited" value="1">
+        <input type="radio" asp-for="Edited" value="1" required>
         <label asp-for="Edited">Yes</label><br>
         <input type="radio" asp-for="Edited" value="0">
         <label asp-for="Edited">No</label><br>
     </div><br />
     <div class="form-group">
-        <label asp-for="Lent">If applicable, who was it lent to?</label><br />
-        <input asp-for="Lent"/>
+        <label asp-for="LentTo">If applicable, who was it lent to?</label><br />
+        <input asp-for="LentTo"/>
     </div><br />
     <div class="form-group">
             <label>Copied to Plex?</label><br />
